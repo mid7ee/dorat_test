@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اشتراك جديد</title>
+
+    <!-- استيراد الخط الفخم -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #F8F1E4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 350px;
+            margin: 80px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #36454F;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #36454F;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #3b3b3b; /* حدود باللون الأسمنتي */
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ebebeb; /* لون النص */
+    background-color: #8D8F8F; /* تغيير لون الخلفية إلى اللون الأسمنتي */
+    box-sizing: border-box;
+}
+
+
+        .input-group input::placeholder {
+            color: #f1f1f1;
+        }
+
+        .submit-btn, .verify-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #36454F;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover, .verify-btn:hover {
+            background-color: #36454F;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-msg {
+            color: red;
+            font-size: 14px;
+        }
+
+        .disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>يرجى إدخال كود الاشتراك</h2>
+
+        <div class="input-group">
+            <input type="text" id="subscriptionCode" placeholder="أدخل كود الاشتراك">
+        </div>
+        <button class="verify-btn" onclick="verifyCode()">تحقق من الكود</button>
+        <p id="error" class="error-msg hidden">الكود غير صحيح أو منتهي</p>
+
+        <!-- نموذج انشاء الحساب -->
+        <div id="accountForm" class="hidden">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="البريد الإلكتروني">
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="كلمة المرور">
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="confirmPassword" placeholder="تأكيد كلمة المرور">
+            </div>
+
+            <button class="submit-btn" onclick="createAccount()">إنشاء حساب</button>
+        </div>
+    </div>
+
+    <script>
+        // الكود الصحيح
+        const validCode = "1234";
+
+        // تحقق من كود الاشتراك
+        function verifyCode() {
+            const code = document.getElementById('subscriptionCode').value;
+            const errorMsg = document.getElementById('error');
+            const accountForm = document.getElementById('accountForm');
+
+            if (code === validCode) {
+                errorMsg.classList.add('hidden');
+                accountForm.classList.remove('hidden');
+            } else {
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        // إنشاء حساب
+        function createAccount() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password === confirmPassword) {
+                // تخزين المعلومات في localStorage
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
+
+                alert('تم إنشاء الحساب بنجاح!');
+            } else {
+                alert('كلمة المرور غير متطابقة!');
+            }
+        }
+    </script>
+</body>
+</html>

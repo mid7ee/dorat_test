@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الدورات</title>
+
+    <!-- استيراد الخط الفخم -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif; /* استخدام خط فخم */
+            background-color: #F8F1E4; /* لون الخلفية ثابت */
+        }
+
+        /* قسم الفيديو في أعلى الصفحة */
+        .video-banner {
+            width: 100%;
+            height: 200px; /* ارتفاع ثابت للجوال */
+            background-color: #36454F; /* لون الخلفية الرمادي */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل للبنر */
+            color: #FFF; /* لون النص */
+            font-size: 26px; /* تكبير حجم الخط */
+            font-weight: bold; /* جعل النص عريض */
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container h2 {
+            color: #36454F; /* تغيير لون النص الرئيسي */
+            font-size: 28px; /* تكبير حجم الخط */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للنص */
+        }
+
+        .buttons {
+            margin-top: 50px; /* تكبير المسافة بين النص والأزرار */
+        }
+
+        .buttons a {
+            display: block; /* عرض الزر بشكل طولي */
+            width: 300px; /* طول ثابت للأزرار */
+            margin: 20px auto; /* محاذاة في الوسط وزيادة المسافة بين الأزرار */
+            padding: 20px; /* تكبير حجم الأزرار بشكل طولي */
+            background-color: #8D8F8F; /* اللون الأسمنتي */
+            color: #36454F; /* تغيير لون النص داخل الأزرار */
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 20px; /* تكبير حجم الخط في الأزرار */
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل للأزرار */
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* انتقالات سلسة */
+        }
+
+        .buttons a:hover {
+            background-color: #7C7F7F; /* تغيير لون الخلفية عند التمرير */
+            transform: scale(1.05); /* تكبير الزر عند التمرير */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+        }
+
+        .buttons .new-subscription {
+            width: 350px; /* الطول الجديد للزر */
+            background-color: #36454F; /* لون خلفية الزر الأخير */
+            color: #8D8F8F; /* لون نص الزر الأخير */
+            margin-top: 50px; /* مسافة إضافية بينه وبين الزرين الآخرين */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- قسم الفيديو كـ بنر أعلى الصفحة -->
+    <div class="video-banner">
+        تعلم اليوم لتأسيس نفسك على النجاح غداً!
+    </div>
+
+    <div class="container">
+        <h2>نورتنا! اختر إحدى الخيارات:</h2>
+        <div class="buttons">
+            <a href="login.html">تسجيل دخول</a>
+            <a href="https://salla.sa/starempire" target="_blank">اشترك معنا!</a>
+            <a href="ashtrak.html" class="new-subscription">اشتراك جديد؟</a>
+        </div>
+    </div>
+
+</body>
+</html>
